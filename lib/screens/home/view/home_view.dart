@@ -72,10 +72,22 @@ class HomeView extends StatelessWidget {
                   print('Im Incrementing');
                   homeController.increment();
                 },
-                child: Text('State management'),
+                child: Text('State management- ${homeController.count.value}'),
               ),
-              Obx(() =>
-                  Text('Incremented Value ${homeController.count.value}')),
+              TextButton(
+                onPressed: () {
+                  print('Hi Im a Snack Bar');
+                  Get.snackbar("Snack Bar", "A little alert for you");
+                },
+                child: Text('SnackBar'),
+              ),
+              TextButton(
+                onPressed: () {
+                  Get.defaultDialog(
+                      title: 'Hi, A little messagefor you. \n Be Good');
+                },
+                child: Text('Dialog'),
+              ),
             ],
           ),
         ),
